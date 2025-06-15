@@ -15,5 +15,5 @@ On mac, navigate to your Applications folder in finder, or run these following c
 ```bash
 cd #goes back to home
 cd /Applications
-ls Applicatins
+ls #list apps
 ```
