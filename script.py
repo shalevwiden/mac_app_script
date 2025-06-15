@@ -19,6 +19,7 @@ apps_to_open = [
 ]
 # or use this
 def get_app_list(filename):
+    applist='in progress'
     return applist
 
 # Loop through and open each one
