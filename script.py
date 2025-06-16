@@ -1,6 +1,17 @@
 import os
 import time
 
+import platform
+
+def detect_os():
+    if platform.system() == "Darwin":  # macOS
+        print('Using MacOS')
+    elif platform.system() == "Windows":
+        print('Using MacOS')
+    else:
+        print("Unsupported OS")
+
+# a single app
 def open_app(app):
     os.system(f'open -a "{app}"')
 def close_app(app):
@@ -17,12 +28,17 @@ apps_to_open = [
     "FaceTime",
     "Notes"
 ]
-# or use this
+# or use this to get appl;ist from a file
 def get_app_list(filename):
-    applist='in progress'
+    applist=[]
+    with open(filename, 'r') as appfile:
+        for line in appfile:
+            applist.append(line.strip().title())
     return applist
 
-# Loop through and open each one
+# print(get_app_list('applist.txt'))
+
+# Loop through and open apps
 def openapps(apps,delay=1.5):
     for app in apps:
         # this command is run in terminal
